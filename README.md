@@ -11,31 +11,31 @@ install.packages("devtools")
 
 library(devtools)
 
-После чего можно устанавливать пакет ryandexdirect.
+После чего можно устанавливать пакет r-yandex-webmaster-v3.
 
 install_github('kutasok/r-yandex-webmaster-v3')
 
-#Функции входящие в пакет ryandexdirect
+#Функции входящие в пакет r-yandex-webmaster-v3
 На данный момент в пакет входит 9 функций:
 
 #ywGetToken()
 Функция для получения токена для доступа к API Вебмастера, полученый токен используется во всех остальных функциях.
 
-#ywGetUserId()
+#ywGetUserId(token=NULL)
 
-#ywGetSitesList()
+#ywGetSitesList(user_id=NULL, token=NULL)
 
-#ywAddSite()
+#ywAddSite(host, user_id=NULL, token=NULL)
 
-#ywDeleteSite()
+#ywDeleteSite(host_id, user_id=NULL, token=NULL)
 
-#ywGetSiteInfo()
+#ywGetSiteInfo(host_id, user_id=NULL, token=NULL)
 
-#ywGetSiteSummary()
+#ywGetSiteSummary(host_id, user_id=NULL, token=NULL)
 
-#ywGetSiteBacklinks()
+#ywGetSiteBacklinks(host_id, offset=0, limit=100, user_id=NULL, token=NULL)
 
-#ywGetSitePopQueries()
+#ywGetSitePopQueries(host_id, order_by="TOTAL_CLICKS", user_id=NULL, token=NULL)
 
 
 #Применение
