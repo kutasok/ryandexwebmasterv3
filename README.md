@@ -2,18 +2,18 @@
 
 ##Содержание
 * [Краткое описание](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#Краткое-описание)
-* Установка пакета r-yandex-webmaster-v3
-* Функции входящие в пакет r-yandex-webmaster-v3
-* ywGetToken
-* ywGetUserId
-* ywGetSitesList
-* ywAddSite
-* ywDeleteSite
-* ywGetSiteInfo
-* ywGetSiteSummary
-* ywGetSiteBacklinks
-* ywGetSitePopQueries
-* Пример работы с пакетом r-yandex-webmaster-v3
+* [Установка пакета r-yandex-webmaster-v3](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#Установка-пакета-r-yandex-webmaster-v3)
+* [Функции входящие в пакет r-yandex-webmaster-v3](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#Функции-входящие-в-пакет-r-yandex-webmaster-v3)
+* [ywGetToken](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#ywgettoken)
+* [ywGetUserId](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#ywgetuseridtokennull)
+* [ywGetSitesList](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#ywgetsiteslistuser_idnull-tokennull)
+* [ywAddSite](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#ywaddsitehost-user_idnull-tokennull)
+* [ywDeleteSite](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#ywdeletesitehost_id-user_idnull-tokennull)
+* [ywGetSiteInfo](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#ywgetsiteinfohost_id-user_idnull-tokennull)
+* [ywGetSiteSummary](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#ywgetsitesummaryhost_id-user_idnull-tokennull)
+* [ywGetSiteBacklinks](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#ywgetsitebacklinkshost_id-offset0-limit100-user_idnull-tokennull)
+* [ywGetSitePopQueries](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#ywgetsitepopquerieshost_id-order_bytotal_clicks-user_idnull-tokennull)
+* [Пример работы с пакетом r-yandex-webmaster-v3](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#Пример-работы-с-пакетом-r-yandex-webmaster-v3)
 
 ##Краткое описание
 Пакет r-yandex-webmaster-v3 помогает выгружать основные данные о сайтах пользователя Яндес Вебмастера.
