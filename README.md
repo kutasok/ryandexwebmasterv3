@@ -49,7 +49,7 @@ library(devtools)
 | host_id | Да | chr | ID сайта. |
 | ascii_host_url | Да | chr | ASCII URL сайта |
 | unicode_host_url | Нет | chr | UTF-8 URL сайта. |
-| verified | chr | Да | Подтвержден ли сайт. |
+| verified | Да | chr | Подтвержден ли сайт. |
 | main_mirror | Да | chr | Главное зеркало сайта, если есть. |
 
 ###`ywAddSite(host, user_id=NULL, token=NULL)`
