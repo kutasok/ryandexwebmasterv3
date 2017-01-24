@@ -1,5 +1,20 @@
 # r-yandex-webmaster-v3 - пакет для работы с API Яндекс Вебмастера версии 3.0 на языке R.
 
+##Содержание
+* [Краткое описание](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#Краткое-описание)
+* Установка пакета r-yandex-webmaster-v3
+* Функции входящие в пакет r-yandex-webmaster-v3
+* ywGetToken
+* ywGetUserId
+* ywGetSitesList
+* ywAddSite
+* ywDeleteSite
+* ywGetSiteInfo
+* ywGetSiteSummary
+* ywGetSiteBacklinks
+* ywGetSitePopQueries
+* Пример работы с пакетом r-yandex-webmaster-v3
+
 ##Краткое описание
 Пакет r-yandex-webmaster-v3 помогает выгружать основные данные о сайтах пользователя Яндес Вебмастера.
 Используется авторизация OAuth 2.0 для защиты данных.
@@ -19,7 +34,7 @@ library(devtools)
 ##Функции входящие в пакет r-yandex-webmaster-v3
 На данный момент в пакет входит 9 функций:
 
-###ywGetToken()
+###`ywGetToken()`
 Функция для получения токена для доступа к API Вебмастера, полученый токен используется во всех остальных функциях.
 
 ###`ywGetUserId(token=NULL)`
@@ -39,7 +54,7 @@ library(devtools)
 ###`ywGetSitePopQueries(host_id, order_by="TOTAL_CLICKS", user_id=NULL, token=NULL)`
 
 
-##Применение
+##Пример работы с пакетом r-yandex-webmaster-v3
 
 `token <- yadirGetToken()`
 
