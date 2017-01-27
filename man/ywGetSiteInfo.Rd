@@ -1,84 +1,35 @@
 \name{ywGetSiteInfo}
 \alias{ywGetSiteInfo}
-%- Also NEED an '\alias' for EACH other topic documented here.
-\title{
-%%  ~~function to do ... ~~
-}
-\description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
-}
+\title{Get basic ifnformation about site from Yandex Webmaster}
+\description{ywGetSiteInfo downloads basic ifnformation about site from Yandex Webmaster API v 3.0}
 \usage{
 ywGetSiteInfo(user_id = NULL, host_id = NULL, token = NULL)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
-  \item{user_id}{
-%%     ~~Describe \code{user_id} here~~
+  \item{user_id}{User id from function ywGetUserId.}
+  \item{host_id}{Host id of your site. You can get by function ywGetSitesList.}
+  \item{token}{Token for Yandex Webmaster API from function ywGetToken}
 }
-  \item{host_id}{
-%%     ~~Describe \code{host_id} here~~
+\details{}
+\value{Returns data frame with columns:
+  host_id - id of host in Yandex Webmaster, 
+  verified - is it verified. Boolean,
+  ascii_host_url - host url in ascii coding, 
+  unicode_host_url - host url in unicode coding,
+  main_mirror - main mirror host if exists, 
+  host_data_status - host status. One of NOT_INDEXED / NOT_LOADED / OK, 
+  host_display_name - host name for using in SERP
 }
-  \item{token}{
-%%     ~~Describe \code{token} here~~
-}
-}
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
+\references{}
+\author{Ivan Kutas}
+\note{}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
+\seealso{}
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (user_id = NULL, host_id = NULL, token = NULL) 
-{
-    if (is.null(token)) {
-        warning("Get your api token by function ywGetToken() and argument token in function ywGetSiteInfo!")
-        break
-    }
-    answer <- GET(paste("https://api.webmaster.yandex.net/v3/user/", 
-        user_id, "/hosts/", host_id, sep = ""), add_headers(Authorization = paste0("OAuth ", 
-        token)))
-    stop_for_status(answer)
-    dataRaw <- content(answer, "parsed", "application/json")
-    resultData <- data.frame(host_id = character(), verified = character(), 
-        ascii_host_url = character(), unicode_host_url = character(), 
-        main_mirror = character(), host_data_status = character(), 
-        host_display_name = character(), stringsAsFactors = FALSE)
-    try(resultData[1, 1] <- dataRaw$host_id, silent = TRUE)
-    try(resultData[1, 2] <- dataRaw$verified, silent = TRUE)
-    try(resultData[1, 3] <- dataRaw$ascii_host_url, silent = TRUE)
-    try(resultData[1, 4] <- dataRaw$unicode_host_url, silent = TRUE)
-    try(resultData[1, 5] <- dataRaw$main_mirror$host_id, silent = TRUE)
-    try(resultData[1, 6] <- dataRaw$host_data_status, silent = TRUE)
-    try(resultData[1, 7] <- dataRaw$host_display_name, silent = TRUE)
-    return(resultData)
-  }
+siteInfo <- ywGetSiteInfo(host_id=hostId, 
+                          token=token)
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
+
 \keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line       
