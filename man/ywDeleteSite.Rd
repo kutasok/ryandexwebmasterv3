@@ -11,7 +11,7 @@ ywDeleteSite(user_id = NULL, host_id = NULL, token = NULL)
   \item{token}{Token for Yandex Webmaster API from function ywGetToken}
 }
 \details{}
-\value{Returns True if site is deleted.}
+\value{Returns TRUE if site is deleted.}
 \references{}
 \author{Ivan Kutas}
 \note{}
