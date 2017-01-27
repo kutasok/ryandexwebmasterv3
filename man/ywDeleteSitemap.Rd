@@ -19,28 +19,8 @@ ywDeleteSitemap(user_id = NULL, host_id = NULL, sitemap_id = NULL, token = NULL)
 
 \seealso{}
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (user_id = NULL, host_id = NULL, sitemap_id = NULL, 
-    token = NULL) 
-{
-    if (is.null(token)) {
-        warning("Get your api token by function ywGetToken() and argument token in function ywAddSitemap!")
-        break
-    }
-    answer <- DELETE(paste("https://api.webmaster.yandex.net/v3/user/", 
-        user_id, "/hosts/", host_id, "/user-added-sitemaps/", 
-        sitemap_id, sep = ""), add_headers(Authorization = paste0("OAuth ", 
-        token)))
-    stop_for_status(answer)
-    dataRaw <- content(answer, "parsed", "application/json")
-    return(TRUE)
-  }
+ywDeleteSitemap(user_id = userId, host_id = hostId, sitemap_id = sitemapId, token = myToken)
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
+
 \keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
 \keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
