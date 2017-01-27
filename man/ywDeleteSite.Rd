@@ -6,10 +6,8 @@
 ywDeleteSite(user_id = NULL, host_id = NULL, token = NULL)
 }
 \arguments{
-  \item{user_id}{
-%%     ~~Describe \code{user_id} here~~
-}
-  \item{host_id}{User id from function ywGetUserId.}
+  \item{user_id}{User id from function ywGetUserId.}
+  \item{host_id}{Host id of your site. You can get by function ywGetSitesList.}
   \item{token}{Token for Yandex Webmaster API from function ywGetToken}
 }
 \details{}
