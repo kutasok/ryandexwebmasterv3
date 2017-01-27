@@ -1,7 +1,7 @@
 \name{ywGetBacklinks}
 \alias{ywGetBacklinks}
 \title{Get site backlinks from Yandex Webmaster}
-\description{ywDeleteSitemap downloads links from Yandex Webmaster via API v3.0.}
+\description{ywGetBacklinks downloads links from Yandex Webmaster via API v3.0.}
 \usage{
 ywGetBacklinks(user_id = NULL, host_id = NULL, offset = 0, limit = 100, token = NULL)
 }
