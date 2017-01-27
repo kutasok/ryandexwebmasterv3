@@ -1,16 +1,16 @@
-# r-yandex-webmaster-v3 - пакет для работы с API Яндекс Вебмастера версии 3.0 на языке R.
+# ryandexwebmasterv3 - пакет для работы с API Яндекс Вебмастера версии 3.0 на языке R.
 
 ##Содержание
 * [Краткое описание](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#Краткое-описание)
-* [Установка пакета r-yandex-webmaster-v3](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#Установка-пакета-r-yandex-webmaster-v3)
-* [Функции входящие в пакет r-yandex-webmaster-v3](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#Функции-входящие-в-пакет-r-yandex-webmaster-v3)
-* [Пример работы с пакетом r-yandex-webmaster-v3](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#Пример-работы-с-пакетом-r-yandex-webmaster-v3)
+* [Установка пакета ryandexwebmasterv3](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#Установка-пакета-r-yandex-webmaster-v3)
+* [Функции входящие в пакет ryandexwebmasterv3](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#Функции-входящие-в-пакет-r-yandex-webmaster-v3)
+* [Пример работы с пакетом ryandexwebmasterv3](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#Пример-работы-с-пакетом-r-yandex-webmaster-v3)
 
 ##Краткое описание
-Пакет r-yandex-webmaster-v3 помогает выгружать основные данные о сайтах пользователя Яндес Вебмастера.
+Пакет ryandexwebmasterv3 помогает выгружать основные данные о сайтах пользователя Яндес Вебмастера.
 Используется авторизация OAuth 2.0 для защиты данных.
 
-##Установка пакета r-yandex-webmaster-v3
+##Установка пакета ryandexwebmasterv3
 Установка пакета осуществляется из репозитория GitHub, для этого сначала требуется установить и подключить пакет devtools.
 
 ```
@@ -18,11 +18,11 @@ install.packages("devtools")
 library(devtools)
 ```
 
-После чего можно устанавливать пакет r-yandex-webmaster-v3.
+После чего можно устанавливать пакет ryandexwebmasterv3.
 
-`install_github('kutasok/r-yandex-webmaster-v3')`
+`install_github('kutasok/ryandexwebmasterv3')`
 
-##Функции входящие в пакет r-yandex-webmaster-v3
+##Функции входящие в пакет ryandexwebmasterv3
 На данный момент в пакет входит 18 функций:
 
 ###`ywGetToken()`
@@ -96,7 +96,7 @@ library(devtools)
 Позволяет получить историю изменения количества внешних ссылок на сайт.
 
 
-##Пример работы с пакетом r-yandex-webmaster-v3
+##Пример работы с пакетом ryandexwebmasterv3
 
 * Получаем токен.
 
@@ -114,20 +114,23 @@ library(devtools)
 
 * Получаем данные о сайте.
 ```
-siteInfo <- ywGetSiteInfo(host_id=sites_list$host_id[1], 
+siteInfo <- ywGetSiteInfo(user_id=user_id,
+                          host_id=sites_list$host_id[1], 
                           token=token)
 ```
 Тут и дальше в примере используется первый host_id из выгруженных функцией ywGetSitesList.
 
 * Получаем сводную информацию о сайте.
 ```
-siteSummary <- ywGetSiteSummary(host_id=sites_list$host_id[1], 
+siteSummary <- ywGetSiteSummary(user_id=user_id,
+                                host_id=sites_list$host_id[1], 
                                 token=token)
 ```
 
 * Получаем список обратных ссылок сайта.
 ```
-siteBacklinks <- ywGetBacklinks(host_id=sites_list$host_id[1], 
+siteBacklinks <- ywGetBacklinks(user_id=user_id,
+                                host_id=sites_list$host_id[1], 
                                 offset=50, 
                                 limit=100, 
                                 token=token)
@@ -136,7 +139,8 @@ siteBacklinks <- ywGetBacklinks(host_id=sites_list$host_id[1],
 
 * Получаем список популярных запросов сайта отсортированных по количеству кликов.
 ```
-sitePopQueries <- ywGetPopQueries(host_id=sites_list$host_id[1], 
+sitePopQueries <- ywGetPopQueries(user_id=user_id,
+                                  host_id=sites_list$host_id[1], 
                                   order_by="TOTAL_CLICKS",
                                   token=token)
 ```
