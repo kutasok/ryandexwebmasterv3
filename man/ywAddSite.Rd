@@ -10,16 +10,8 @@ ywAddSite(user_id = NULL, host = NULL, token = NULL)
   \item{host}{Host with protocol. Ex: http://netpeak.net}
   \item{token}{Token for Yandex Webmaster API from function ywGetToken}
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
+\details{}
+\value{Returns host id of added site if site is added.}
 \references{}
 \author{Ivan Kutas}
 \note{}
@@ -29,7 +21,6 @@ ywAddSite(user_id = NULL, host = NULL, token = NULL)
 \examples{
 ywAddSite(user_id=userId, host="http://netpeak.net", token=myToken)
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
+
 \keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
 \keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
