@@ -1,55 +1,23 @@
 \name{ywDeleteSitemap}
 \alias{ywDeleteSitemap}
-%- Also NEED an '\alias' for EACH other topic documented here.
-\title{
-%%  ~~function to do ... ~~
-}
-\description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
-}
+\title{Delete sitemap from Yandex Webmaster.}
+\description{ywDeleteSitemap deletes sitemap of the site from Yandex Webmaster via API v3.0.}
 \usage{
 ywDeleteSitemap(user_id = NULL, host_id = NULL, sitemap_id = NULL, token = NULL)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{user_id}{
-%%     ~~Describe \code{user_id} here~~
+  \item{user_id}{User id from function ywGetUserId.}
+  \item{host_id}{Host id of your site. You can get by function ywGetSitesList.}
+  \item{sitemap_id}{Id of sitemap to delete. Sitemap ids you can get by function ywGetSitemaps}
+  \item{token}{Token for Yandex Webmaster API from function ywGetToken}
 }
-  \item{host_id}{
-%%     ~~Describe \code{host_id} here~~
-}
-  \item{sitemap_id}{
-%%     ~~Describe \code{sitemap_id} here~~
-}
-  \item{token}{
-%%     ~~Describe \code{token} here~~
-}
-}
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
+\details{}
+\value{Returns TRUE if site is deleted.}
+\references{}
+\author{Ivan Kutas}
+\note{}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
+\seealso{}
 \examples{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
