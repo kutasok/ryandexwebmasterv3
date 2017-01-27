@@ -35,13 +35,13 @@ library(devtools)
 Функция возвращает датафрейм со списком сайтов, добавленных пользователем, и сводную информацию о каждом из них.
 
 ####Структура возвращаемого функцией `yadirGetClientList` дата фрейма:
-| Поле | Обязательный | Тип данных | Описание |
-| --- | --- | --- | --- |
-| host_id | Да | chr | ID сайта. |
-| ascii_host_url | Да | chr | ASCII URL сайта |
-| unicode_host_url | Нет | chr | UTF-8 URL сайта. |
-| verified | Да | chr | Подтвержден ли сайт. |
-| main_mirror | Да | chr | Главное зеркало сайта, если есть. |
+| Поле | Тип данных | Описание |
+| --- | --- | --- |
+| host_id | chr | ID сайта. |
+| ascii_host_url | chr | ASCII URL сайта |
+| unicode_host_url | chr | UTF-8 URL сайта. |
+| verified | chr | Подтвержден ли сайт. |
+| main_mirror | chr | Главное зеркало сайта, если есть. |
 
 ###`ywAddSite(user_id=NULL, host=NULL, token=NULL)`
 Позволяет добавить сайт в список сайтов пользователя.
