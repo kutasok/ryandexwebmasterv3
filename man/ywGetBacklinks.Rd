@@ -20,7 +20,7 @@ discovery_date - date when yandex robots discovered links,
 source_last_access_date - date of last acces by yandex robot
 }
 \references{}
-\author{}
+\author{Ivan Kutas}
 \note{}
 
 \seealso{}
