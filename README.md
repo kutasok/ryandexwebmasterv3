@@ -98,34 +98,34 @@ library(devtools)
 
 ##Пример работы с пакетом r-yandex-webmaster-v3
 
-1. Получаем токен.
+* Получаем токен.
 
 `token <- yadirGetToken()`
 
 Откроется браузер. Копируем токен и вставляем в RStudio.
 
-2. Получаем ID пользователя. Он используется во всех функциях ниже.
+* Получаем ID пользователя. Он используется во всех функциях ниже.
 
 `user_id <- ywGetUserId(token=token)`
 
-3. Получаем список сайтов пользователя.
+* Получаем список сайтов пользователя.
 
 `sites_list <- ywGetSitesList(user_id=user_id, token=token)`
 
-4. Получаем данные о сайте.
+* Получаем данные о сайте.
 ```
 siteInfo <- ywGetSiteInfo(host_id=sites_list$host_id[1], 
                           token=token)
 ```
 Тут и дальше в примере используется первый host_id из выгруженных функцией ywGetSitesList.
 
-5. Получаем сводную информацию о сайте.
+* Получаем сводную информацию о сайте.
 ```
 siteSummary <- ywGetSiteSummary(host_id=sites_list$host_id[1], 
                                 token=token)
 ```
 
-6. Получаем список обратных ссылок сайта.
+* Получаем список обратных ссылок сайта.
 ```
 siteBacklinks <- ywGetBacklinks(host_id=sites_list$host_id[1], 
                                 offset=50, 
@@ -134,21 +134,21 @@ siteBacklinks <- ywGetBacklinks(host_id=sites_list$host_id[1],
 ```
  В примере выгружаем 100 ссылок начиная с 51-й.
 
-7. Получаем список популярных запросов сайта отсортированных по количеству кликов.
+* Получаем список популярных запросов сайта отсортированных по количеству кликов.
 ```
 sitePopQueries <- ywGetPopQueries(host_id=sites_list$host_id[1], 
                                   order_by="TOTAL_CLICKS",
                                   token=token)
 ```
 
-8. Получаем список файлов sitemap, обнаруженных роботами Яндекса.
+* Получаем список файлов sitemap, обнаруженных роботами Яндекса.
 ```
 siteSitemaps <- ywGetSitemaps(host_id=sites_list$host_id[1], 
                               user_id=user_id, 
                               token=token)
 ```
 
-9. Получаем подробную информацию о файле sitemap. 
+* Получаем подробную информацию о файле sitemap. 
 ```
 sitemapInfo <- ywGetSitemapInfo(host_id=sites_list$host_id[1], 
                                 sitemap_id=siteSitemaps$sitemap_id[1], 
@@ -157,14 +157,14 @@ sitemapInfo <- ywGetSitemapInfo(host_id=sites_list$host_id[1],
 ```
 Пока что API работает некорректно и отдает такой же результат как и в предыдущем методе.
 
-10. Получаем список файлов sitemap, добавленных пользователем.
+* Получаем список файлов sitemap, добавленных пользователем.
 ```
 addedSitemaps <- ywGetUserAddedSitemaps(host_id=sites_list$host_id[1], 
                                         user_id=user_id, 
                                         token=token)
 ```
 
-11. Получаем подробную информацию о файле sitemap, добавленном пользователем.
+* Получаем подробную информацию о файле sitemap, добавленном пользователем.
 ```
 addedSitemapsInfo<- ywGetUserAddedSitemapInfo(host_id=sites_list$host_id[1], 
                                               sitemap_id=addedSitemaps$sitemap_id[1], 
@@ -172,7 +172,7 @@ addedSitemapsInfo<- ywGetUserAddedSitemapInfo(host_id=sites_list$host_id[1],
                                               token=token)
 ```
 
-12. Получаем историю индексирования сайта роботами Яндекса за определенные даты.
+* Получаем историю индексирования сайта роботами Яндекса за определенные даты.
 ```
 indexingHistory <- ywGetIndexingHistory(host_id=sites_list$host_id[1], 
                                         user_id=user_id, 
@@ -181,7 +181,7 @@ indexingHistory <- ywGetIndexingHistory(host_id=sites_list$host_id[1],
                                         token=token)
 ```
 
-13. Получаем историю изменения значений тИЦ сайта.
+* Получаем историю изменения значений тИЦ сайта.
 ```
 TICHistory <- ywGetTicHistory(host_id=sites_list$host_id[1], 
                               user_id=user_id, 
@@ -190,7 +190,7 @@ TICHistory <- ywGetTicHistory(host_id=sites_list$host_id[1],
                               token=token)
 ```
 
-14. Получаем историю изменения количества внешних ссылок на сайт.
+* Получаем историю изменения количества внешних ссылок на сайт.
 ```
 backlinksHistory <- ywGetBacklinksHistory(host_id=sites_list$host_id[1], 
                                           user_id=user_id,
