@@ -4,15 +4,6 @@
 * [Краткое описание](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#Краткое-описание)
 * [Установка пакета r-yandex-webmaster-v3](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#Установка-пакета-r-yandex-webmaster-v3)
 * [Функции входящие в пакет r-yandex-webmaster-v3](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#Функции-входящие-в-пакет-r-yandex-webmaster-v3)
-* [ywGetToken](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#ywgettoken)
-* [ywGetUserId](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#ywgetuseridtokennull)
-* [ywGetSitesList](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#ywgetsiteslistuser_idnull-tokennull)
-* [ywAddSite](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#ywaddsitehost-user_idnull-tokennull)
-* [ywDeleteSite](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#ywdeletesitehost_id-user_idnull-tokennull)
-* [ywGetSiteInfo](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#ywgetsiteinfohost_id-user_idnull-tokennull)
-* [ywGetSiteSummary](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#ywgetsitesummaryhost_id-user_idnull-tokennull)
-* [ywGetSiteBacklinks](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#ywgetsitebacklinkshost_id-offset0-limit100-user_idnull-tokennull)
-* [ywGetSitePopQueries](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#ywgetsitepopquerieshost_id-order_bytotal_clicks-user_idnull-tokennull)
 * [Пример работы с пакетом r-yandex-webmaster-v3](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#Пример-работы-с-пакетом-r-yandex-webmaster-v3)
 
 ##Краткое описание
@@ -53,92 +44,135 @@ library(devtools)
 | main_mirror | Да | chr | Главное зеркало сайта, если есть. |
 
 ###`ywAddSite(user_id=NULL, host=NULL, token=NULL)`
+Позволяет добавить сайт в список сайтов пользователя.
 
 ###`ywDeleteSite(user_id=NULL, host_id=NULL, token=NULL)`
+Позволяет удалить сайт из списка сайтов пользователя.
 
 ###`ywGetSiteInfo(user_id=NULL, host_id=NULL, token=NULL)`
+Позволяет получить информацию о текущем состоянии индексирования сайта.
 
 ###`ywGetSiteSummary(user_id=NULL, host_id=NULL, token=NULL)`
+Позволяет получить сводную информацию о сайте.
 
 ###`ywGetBacklinks(user_id=NULL, host_id=NULL, offset=0, limit=100, token=NULL)`
+Позволяет получить примеры внешних ссылок на страницы сайта.
 
 ###`ywGetPopQueries(user_id=NULL, host_id=NULL, order_by="TOTAL_CLICKS", token=NULL)`
+Позволяет получить список топ-500 поисковых запросов, по которым сайт показывался на поиске за последнюю неделю. 
+Можно выбрать 500 запросов с наибольшим числом показов или 500 запросов с наибольшим числом переходов.
+Задается параметром order_by.
 
 ###`ywGetSitemaps(user_id=NULL, host_id=NULL, parent_id=NULL, limit=NULL, from=NULL, token=NULL)`
+Позволяет получить список файлов sitemap, обнаруженных роботами Яндекса.
 
 ###`ywGetSitemapInfo(user_id=NULL, host_id=NULL, sitemap_id=NULL, token=NULL)`
+Позволяет получить подробную информацию о файле sitemap, включая тип файла, дату и способ загрузки файла в Яндекс.Вебмастер, дату обработки файла сервисом, 
+количество содержащихся в файле URL, а также количество и тип обнаруженных ошибок.
+
+!!! Пока что API дает такой же результат как и для метода ywGetSitemaps(). 
+Лучше пока использовать метод ywGetSitemaps() с указанием parent_id.
 
 ###`ywGetUserAddedSitemaps(user_id=NULL, host_id=NULL, offset=NULL, limit=NULL, token=NULL)`
+Позволяет получить список файлов sitemap, добавленных пользователем.
 
 ###`ywGetUserAddedSitemapInfo(user_id=NULL, host_id=NULL, sitemap_id=NULL, token=NULL)`
+Позволяет получить подробную информацию о файле sitemap, добавленном пользователем, включая тип файла, дату и способ загрузки файла в Яндекс.Вебмастер, дату обработки файла сервисом, количество содержащихся в файле URL, а также количество и тип обнаруженных ошибок.
 
 ###`ywAddSitemap(user_id=NULL, host_id=NULL, sitemap_url=NULL, token=NULL)`
+Позволяет добавить файл sitemap в Яндекс.Вебмастер.
 
 ###`ywDeleteSitemap(user_id=NULL, host_id=NULL, sitemap_id=NULL, token=NULL)`
+Позволяет удалить добавленный пользователем файл sitemap.
 
 ###`ywGetIndexingHistory(user_id=NULL, host_id=NULL, date_from=NULL, date_to=NULL, token=NULL)`
+Позволяет получить историю индексирования сайта роботами Яндекса.
 
 ###`ywGetTicHistory(user_id=NULL, host_id=NULL, date_from=NULL, date_to=NULL, token=NULL)`
+Позволяет получить историю изменения значений тИЦ сайта за последние 6 месяцев, включая текущий. Для каждого месяца список содержит даты, когда тИЦ менял свое значение. 
+Если в какой-то из месяцев тИЦ не изменялся, то в списке будет одна запись для этого месяца с актуальным значением тИЦ на тот момент.
 
 ###`ywGetBacklinksHistory(user_id=NULL, host_id=NULL, token=NULL)`
+Позволяет получить историю изменения количества внешних ссылок на сайт.
 
 
 ##Пример работы с пакетом r-yandex-webmaster-v3
 
+1. Получаем токен.
+
 `token <- yadirGetToken()`
+
+Откроется браузер. Копируем токен и вставляем в RStudio.
+
+2. Получаем ID пользователя. Он используется во всех функциях ниже.
 
 `user_id <- ywGetUserId(token=token)`
 
+3. Получаем список сайтов пользователя.
+
 `sites_list <- ywGetSitesList(user_id=user_id, token=token)`
 
+4. Получаем данные о сайте.
 ```
 siteInfo <- ywGetSiteInfo(host_id=sites_list$host_id[1], 
                           token=token)
 ```
+Тут и дальше в примере используется первый host_id из выгруженных функцией ywGetSitesList.
 
+5. Получаем сводную информацию о сайте.
 ```
 siteSummary <- ywGetSiteSummary(host_id=sites_list$host_id[1], 
                                 token=token)
 ```
 
+6. Получаем список обратных ссылок сайта.
 ```
 siteBacklinks <- ywGetBacklinks(host_id=sites_list$host_id[1], 
                                 offset=50, 
                                 limit=100, 
                                 token=token)
 ```
+ В примере выгружаем 100 ссылок начиная с 51-й.
 
+7. Получаем список популярных запросов сайта отсортированных по количеству кликов.
 ```
 sitePopQueries <- ywGetPopQueries(host_id=sites_list$host_id[1], 
+                                  order_by="TOTAL_CLICKS",
                                   token=token)
 ```
 
+8. Получаем список файлов sitemap, обнаруженных роботами Яндекса.
 ```
-siteSitemaps <- ywGetSitemaps(host_id=sites_list$host_id[5], 
+siteSitemaps <- ywGetSitemaps(host_id=sites_list$host_id[1], 
                               user_id=user_id, 
                               token=token)
 ```
 
+9. Получаем подробную информацию о файле sitemap. 
 ```
-sitemapInfo <- ywGetSitemapInfo(host_id=sites_list$host_id[5], 
+sitemapInfo <- ywGetSitemapInfo(host_id=sites_list$host_id[1], 
                                 sitemap_id=siteSitemaps$sitemap_id[1], 
                                 user_id=user_id, 
                                 token=token)
 ```
+Пока что API работает некорректно и отдает такой же результат как и в предыдущем методе.
 
+10. Получаем список файлов sitemap, добавленных пользователем.
 ```
-addedSitemaps <- ywGetUserAddedSitemaps(host_id=sites_list$host_id[2], 
+addedSitemaps <- ywGetUserAddedSitemaps(host_id=sites_list$host_id[1], 
                                         user_id=user_id, 
                                         token=token)
 ```
 
+11. Получаем подробную информацию о файле sitemap, добавленном пользователем.
 ```
-addedSitemapsInfo<- ywGetUserAddedSitemapInfo(host_id=sites_list$host_id[2], 
+addedSitemapsInfo<- ywGetUserAddedSitemapInfo(host_id=sites_list$host_id[1], 
                                               sitemap_id=addedSitemaps$sitemap_id[1], 
                                               user_id=user_id, 
                                               token=token)
 ```
 
+12. Получаем историю индексирования сайта роботами Яндекса за определенные даты.
 ```
 indexingHistory <- ywGetIndexingHistory(host_id=sites_list$host_id[1], 
                                         user_id=user_id, 
@@ -147,6 +181,7 @@ indexingHistory <- ywGetIndexingHistory(host_id=sites_list$host_id[1],
                                         token=token)
 ```
 
+13. Получаем историю изменения значений тИЦ сайта.
 ```
 TICHistory <- ywGetTicHistory(host_id=sites_list$host_id[1], 
                               user_id=user_id, 
@@ -155,12 +190,9 @@ TICHistory <- ywGetTicHistory(host_id=sites_list$host_id[1],
                               token=token)
 ```
 
+14. Получаем историю изменения количества внешних ссылок на сайт.
 ```
 backlinksHistory <- ywGetBacklinksHistory(host_id=sites_list$host_id[1], 
                                           user_id=user_id,
                                           token=token)
 ```
-
-
-
-
