@@ -16,10 +16,10 @@ ywGetSitemapInfo(user_id = NULL, host_id = NULL, sitemap_id = NULL, token = NULL
 \value{Returns data frame with columns:
   sitemap_id - id of sitemap, 
   sitemap_url - url of sitemap, 
-  last_access_date - dta of last access by yandex robot, 
+  last_access_date - date of last access by yandex robot, 
   errors_count - quantity of sitemap errors, 
   urls_count - quantity of urls in sitemap, 
-  children_count - quantity if children sitemaps if it is sitemap index file, 
+  children_count - quantity of children sitemaps if it is sitemap index file, 
   sources - sources where yandex found sitemaps, 
   sitemap_type - type of sitemap file
 }
