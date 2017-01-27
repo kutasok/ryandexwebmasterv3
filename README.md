@@ -91,51 +91,72 @@ library(devtools)
 
 `sites_list <- ywGetSitesList(user_id=user_id, token=token)`
 
-```siteInfo <- ywGetSiteInfo(host_id=sites_list$host_id[1], 
+```
+siteInfo <- ywGetSiteInfo(host_id=sites_list$host_id[1], 
                           token=token)
 ```
-```siteSummary <- ywGetSiteSummary(host_id=sites_list$host_id[1], 
+
+```
+siteSummary <- ywGetSiteSummary(host_id=sites_list$host_id[1], 
                                 token=token)
 ```
-```siteBacklinks <- ywGetBacklinks(host_id=sites_list$host_id[1], 
+
+```
+siteBacklinks <- ywGetBacklinks(host_id=sites_list$host_id[1], 
                                 offset=50, 
                                 limit=100, 
                                 token=token)
 ```
-```sitePopQueries <- ywGetPopQueries(host_id=sites_list$host_id[1], 
+
+```
+sitePopQueries <- ywGetPopQueries(host_id=sites_list$host_id[1], 
                                   token=token)
 ```
-```siteSitemaps <- ywGetSitemaps(host_id=sites_list$host_id[5], 
+
+```
+siteSitemaps <- ywGetSitemaps(host_id=sites_list$host_id[5], 
                               user_id=user_id, 
                               token=token)
 ```
-```sitemapInfo <- ywGetSitemapInfo(host_id=sites_list$host_id[5], 
+
+```
+sitemapInfo <- ywGetSitemapInfo(host_id=sites_list$host_id[5], 
                                 sitemap_id=siteSitemaps$sitemap_id[1], 
                                 user_id=user_id, 
                                 token=token)
 ```
-```addedSitemaps <- ywGetUserAddedSitemaps(host_id=sites_list$host_id[2], 
+
+```
+addedSitemaps <- ywGetUserAddedSitemaps(host_id=sites_list$host_id[2], 
                                         user_id=user_id, 
                                         token=token)
 ```
-```addedSitemapsInfo<- ywGetUserAddedSitemapInfo(host_id=sites_list$host_id[2], 
+
+```
+addedSitemapsInfo<- ywGetUserAddedSitemapInfo(host_id=sites_list$host_id[2], 
                                               sitemap_id=addedSitemaps$sitemap_id[1], 
                                               user_id=user_id, 
                                               token=token)
 ```
-```indexingHistory <- ywGetIndexingHistory(host_id=sites_list$host_id[1], 
+
+```
+indexingHistory <- ywGetIndexingHistory(host_id=sites_list$host_id[1], 
                                         user_id=user_id, 
                                         date_from = "2017-01-01", 
                                         date_to = "2017-01-20",
                                         token=token)
 ```
-```TICHistory <- ywGetTicHistory(host_id=sites_list$host_id[1], 
+
+```
+TICHistory <- ywGetTicHistory(host_id=sites_list$host_id[1], 
                               user_id=user_id, 
                               date_from = "2016-11-01", 
                               date_to = "2017-01-20",
                               token=token)
 ```
-```backlinksHistory <- ywGetBacklinksHistory(host_id=sites_list$host_id[1], 
+
+```
+backlinksHistory <- ywGetBacklinksHistory(host_id=sites_list$host_id[1], 
                                           user_id=user_id,
                                           token=token)
 ```
