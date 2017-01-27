@@ -1,0 +1,11 @@
+Package: r-yandex-webmaster-v3
+Type: Package
+Title: Load data from Yandex Webmaster
+Version: 1.0
+Date: 2017-01-27
+Author: Ivan Kutas
+Maintainer: Ivan Kutas <kutasok777@gmail.com>
+Description: Load data from Yandex Webmaster API v3.0 into R.
+License: no license it's free
+Depends: R (>= 3.0.0)
+Imports: httr
