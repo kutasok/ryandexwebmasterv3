@@ -12,7 +12,7 @@ ywAddSitemap <-
                          host_id,
                          "/user-added-sitemaps/",sep = ""), 
                    add_headers(Authorization = paste0("OAuth ", token),
-                               Content-type = "application/json"),
+                               'Content-type' = "application/json"),
                    body = paste0("{\"url\": \"", 
                                  sitemap_url, 
                                  "}\""))
