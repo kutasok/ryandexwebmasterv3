@@ -100,7 +100,7 @@ library(devtools)
 
 * Получаем токен.
 
-`token <- yadirGetToken()`
+`token <- ywGetToken()`
 
 Откроется браузер. Копируем токен и вставляем в RStudio.
 
