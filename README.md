@@ -98,6 +98,9 @@ library(devtools)
 
 ##Пример работы с пакетом ryandexwebmasterv3
 
+* подключаем библиотеку
+`library(ryandexwebmasterv3)`
+
 * Получаем токен.
 
 `token <- ywGetToken()`
