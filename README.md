@@ -98,7 +98,8 @@ library(devtools)
 
 ##Пример работы с пакетом ryandexwebmasterv3
 
-* подключаем библиотеку
+* Подключаем библиотеку.
+
 `library(ryandexwebmasterv3)`
 
 * Получаем токен.
