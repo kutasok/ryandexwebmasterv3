@@ -22,6 +22,8 @@ library(devtools)
 
 `install_github('kutasok/ryandexwebmasterv3')`
 
+Пример использования смотрите [ниже](https://github.com/kutasok/r-yandex-webmaster-v3/blob/master/README.md#Пример-работы-с-пакетом-r-yandex-webmaster-v3).
+
 ##Функции входящие в пакет ryandexwebmasterv3
 На данный момент в пакет входит 18 функций:
 
