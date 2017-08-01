@@ -8,4 +8,4 @@ Maintainer: Ivan Kutas <kutasok777@gmail.com>
 Description: Load data from Yandex Webmaster API v30 into R
 License: no license it is free
 Depends: R (>= 3.0.0)
-Imports: httr
+Imports: httr,jsonlite,stringr
