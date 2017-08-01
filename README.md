@@ -97,6 +97,11 @@ library(devtools)
 ###`ywGetBacklinksHistory(user_id=NULL, host_id=NULL, token=NULL)`
 Позволяет получить историю изменения количества внешних ссылок на сайт.
 
+###`ywGetAddedHostsWeb(headers=NULL)`
+Позволяет получить список хостов добавленных в веб версии.
+
+###`ywGetQueriesWeb(headers=NULL, hostId=NULL)`
+Позволяет получить все запросы хоста из веб версии.
 
 ##Пример работы с пакетом ryandexwebmasterv3
 
