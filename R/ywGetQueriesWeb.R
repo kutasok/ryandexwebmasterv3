@@ -1,6 +1,6 @@
 #Позволяет получить все запросы определенного хоста из Веб интерфейса.
 ywGetQueriesWeb <- 
-  function(headers = NULL, hostId = NULL){
+  function(headers = NULL, hostId = NULL,  dateFrom = NULL, dateTo = NULL){
     if(is.null(headers)){
       warning("Пожалуйста, укажите заголовки для запросов.");
       break
@@ -12,12 +12,21 @@ ywGetQueriesWeb <-
     
     content <- content(searchStatistics, "text");
     
-    # достаем параметры запросов из HTML
+    # достаем параметры запросов
+    # усли даты не указаны, берем из HTML
+    if(is.null(dateFrom)){
     tmpltDateFrom <- 'name="dateFrom" value=".*?"'
-    dateFrom <- gsub('name="dateFrom" value="(.*)"', "\\1", str_extract(content, tmpltDateFrom))
+    dateFrom <- gsub('name="dateFrom" value="(.*)"', 
+                     "\\1", 
+                     str_extract(content, tmpltDateFrom))
     
-    tmpltDateTo <- 'name="dateTo" value=".*?"'
-    dateTo <- gsub('name="dateTo" value="(.*)"', "\\1", str_extract(content, tmpltDateTo))
+    }else(dateFrom <- paste0(dateFrom,'T00:00:00+03:00'))
+  
+    if(is.null(dateTo)){
+      tmpltDateTo <- 'name="dateTo" value=".*?"'
+      dateTo <- gsub('name="dateTo" value="(.*)"', "\\1", str_extract(content, tmpltDateTo))
+
+    }else(dateTo <- paste0(dateTo,'T23:59:59+03:00'))
     
     tmpltCrc <- 'crc=.*?&quot;'
     crc <- gsub('crc=(.*)&quot;', "\\1", str_extract(content, tmpltCrc))
