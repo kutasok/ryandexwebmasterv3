@@ -214,9 +214,9 @@ backlinksHistory <- ywGetBacklinksHistory(host_id=sites_list$host_id[1],
 
 * Получаем из веб версии все добавленные хосты.
 ```
-# Берем User-Agent и Cookie из браузера.
-User_Agent <-  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'
-Cookie <- 'yandexuid=1458919211469463782; _ym_uid=1469524845136555801;'
+# Берем User-Agent и Cookie из браузера и вставляем ниже.
+User_Agent <-  'юзер агент'
+Cookie <- 'все куки'
 
 headers <- c('User-Agent' = User_Agent,
              'Cookie' = Cookie);
