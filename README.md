@@ -206,3 +206,24 @@ backlinksHistory <- ywGetBacklinksHistory(host_id=sites_list$host_id[1],
                                           user_id=user_id,
                                           token=token)
 ```
+
+* Получаем из веб версии все добавленные хосты.
+```
+# Берем User-Agent и Cookie из браузера.
+User_Agent <-  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'
+Cookie <- 'yandexuid=1458919211469463782; _ym_uid=1469524845136555801;'
+
+headers <- c('User-Agent' = User_Agent,
+             'Cookie' = Cookie);
+
+
+hosts <- ywGetAddedHostsWeb(headers = headers)
+```
+
+* Выгружаем из веб версии все запросы определенного хоста.
+```
+hostId <- hosts$hostId[2];
+
+queries <- ywGetQueriesWeb(headers = header, 
+                          hostId = hostId)
+```
