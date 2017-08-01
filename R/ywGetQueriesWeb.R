@@ -1,8 +1,8 @@
-#Позволяет получить все запросы определенного хоста из Веб интерфейса.
+#РџРѕР·РІРѕР»СЏРµС‚ РїРѕР»СѓС‡РёС‚СЊ РІСЃРµ Р·Р°РїСЂРѕСЃС‹ РѕРїСЂРµРґРµР»РµРЅРЅРѕРіРѕ С…РѕСЃС‚Р° РёР· Р’РµР± РёРЅС‚РµСЂС„РµР№СЃР°.
 ywGetQueriesWeb <- 
   function(headers = NULL, hostId = NULL){
     if(is.null(headers)){
-      warning("Пожалуйста, укажите заголовки для запросов.");
+      warning("РџРѕР¶Р°Р»СѓР№СЃС‚Р°, СѓРєР°Р¶РёС‚Рµ Р·Р°РіРѕР»РѕРІРєРё РґР»СЏ Р·Р°РїСЂРѕСЃРѕРІ.");
       break
     }
     searchStatistics <- GET(paste0('https://webmaster.yandex.ru/site/',
@@ -12,9 +12,7 @@ ywGetQueriesWeb <-
     
     content <- content(searchStatistics, "text");
     
-    #write(content, 'test.txt')
-    
-    # достаем dateFrom и  dateTo из routeParams
+    # РґРѕСЃС‚Р°РµРј РїР°СЂР°РјРµС‚СЂС‹ Р·Р°РїСЂРѕСЃРѕРІ РёР· HTML
     tmpltDateFrom <- 'name="dateFrom" value=".*?"'
     dateFrom <- gsub('name="dateFrom" value="(.*)"', "\\1", str_extract(content, tmpltDateFrom))
     
@@ -56,26 +54,26 @@ ywGetQueriesWeb <-
                             encode = "form");
     aggregateContent <- content(aggregateAnswer, "text");
     
-    # пауза 5 секунд чтобы сгенерировался URL
+    # РїР°СѓР·Р° 5 СЃРµРєСѓРЅРґ С‡С‚РѕР±С‹ СЃРіРµРЅРµСЂРёСЂРѕРІР°Р»СЃСЏ URL
     Sys.sleep(5)
     
-    # еще один запрос
+    # РµС‰Рµ РѕРґРёРЅ Р·Р°РїСЂРѕСЃ
     aggregateAnswer <- POST("https://webmaster.yandex.ru/gate/sean-queries-statistics/aggregate-download/",
                             add_headers(.headers=headers),
                             body = body,
                             encode = "form");
-    # проверка наличия publicUrlMds
+    # РїСЂРѕРІРµСЂРєР° РЅР°Р»РёС‡РёСЏ publicUrlMds
     aggregateContent <- content(aggregateAnswer, "text");
     
     contentJson <- fromJSON(aggregateContent)
     print(contentJson)
     
-    # проверяем ответ на ошибку
+    # РїСЂРѕРІРµСЂСЏРµРј РѕС‚РІРµС‚ РЅР° РѕС€РёР±РєСѓ
     if("eror" %in% names(contentJson[[1]])){
       return('error')
     }
     
-    # если есть URL, делаем запрос на него
+    # РµСЃР»Рё РµСЃС‚СЊ URL, РґРµР»Р°РµРј Р·Р°РїСЂРѕСЃ РЅР° РЅРµРіРѕ
     publicUrlMds <- contentJson[[1]]$downloadInfo$publicUrlMds;
     
     try(queries <- read.csv(url(publicUrlMds)))
