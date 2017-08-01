@@ -1,19 +1,19 @@
-#Позволяет получить все хосты, которые добавлены в Веб интерфейсе.
+# РџРѕР·РІРѕР»СЏРµС‚ РїРѕР»СѓС‡РёС‚СЊ РІСЃРµ С…РѕСЃС‚С‹, РєРѕС‚РѕСЂС‹Рµ РґРѕР±Р°РІР»РµРЅС‹ РІ Р’РµР± РёРЅС‚РµСЂС„РµР№СЃРµ.
 ywGetAddedHostsWeb <- 
   function(headers=NULL){
     if(is.null(headers)){
-      warning("Пожалуйста, укажите заголовки для запросов.");
+      warning("ГЏГ®Г¦Г Г«ГіГ©Г±ГІГ , ГіГЄГ Г¦ГЁГІГҐ Г§Г ГЈГ®Г«Г®ГўГЄГЁ Г¤Г«Гї Г§Г ГЇГ°Г®Г±Г®Гў.");
       break
     }
     
-    # идем на https://webmaster.yandex.ru/sites/ чтобы достать все сайты аккаунта
+    # ГЁГ¤ГҐГ¬ Г­Г  https://webmaster.yandex.ru/sites/ Г·ГІГ®ГЎГ» Г¤Г®Г±ГІГ ГІГј ГўГ±ГҐ Г±Г Г©ГІГ» Г ГЄГЄГ ГіГ­ГІГ 
     sitesHtml <- GET('https://webmaster.yandex.ru/sites/',
                      add_headers(.headers=headers));
     
     content <- content(sitesHtml, "text");
     
     
-    # берем все hostId из sitesList
+    # ГЎГҐГ°ГҐГ¬ ГўГ±ГҐ hostId ГЁГ§ sitesList
     # https://stackoverflow.com/questions/19757001/r-extract-json-variable-info
     tmplt <- 'sitesList.*sitesListPager'
     json <- str_extract(content, tmplt)
@@ -39,7 +39,7 @@ ywGetAddedHostsWeb <-
       }
       addedHosts <- rbind(addedHosts, host)
     }
-    # удаляем лишние объекты
+    # ГіГ¤Г Г«ГїГҐГ¬ Г«ГЁГёГ­ГЁГҐ Г®ГЎГєГҐГЄГІГ»
     rm(host)
     
     return(addedHosts)
