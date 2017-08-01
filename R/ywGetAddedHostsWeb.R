@@ -1,19 +1,19 @@
-# Позволяет получить все хосты, которые добавлены в Веб интерфейсе.
+#Позволяет получить все хосты, которые добавлены в Веб интерфейсе.
 ywGetAddedHostsWeb <- 
   function(headers=NULL){
     if(is.null(headers)){
-      warning("Ïîæàëóéñòà, óêàæèòå çàãîëîâêè äëÿ çàïðîñîâ.");
+      warning("Пожалуйста, укажите заголовки для запросов.");
       break
     }
     
-    # èäåì íà https://webmaster.yandex.ru/sites/ ÷òîáû äîñòàòü âñå ñàéòû àêêàóíòà
+    # идем на https://webmaster.yandex.ru/sites/ чтобы достать все сайты аккаунта
     sitesHtml <- GET('https://webmaster.yandex.ru/sites/',
                      add_headers(.headers=headers));
     
     content <- content(sitesHtml, "text");
     
     
-    # áåðåì âñå hostId èç sitesList
+    # берем все hostId из sitesList
     # https://stackoverflow.com/questions/19757001/r-extract-json-variable-info
     tmplt <- 'sitesList.*sitesListPager'
     json <- str_extract(content, tmplt)
@@ -39,7 +39,7 @@ ywGetAddedHostsWeb <-
       }
       addedHosts <- rbind(addedHosts, host)
     }
-    # óäàëÿåì ëèøíèå îáúåêòû
+    # удаляем лишние объекты
     rm(host)
     
     return(addedHosts)
