@@ -214,7 +214,7 @@ backlinksHistory <- ywGetBacklinksHistory(host_id=sites_list$host_id[1],
 
 * Получаем из веб версии все добавленные хосты.
 ```
-# Берем User-Agent и Cookie из браузера и вставляем ниже.
+# Берем User-Agent и Cookie из браузера http://img.netpeak.ua/kutasok/rZXle-2017-08-01.png и вставляем ниже.
 User_Agent <-  'юзер агент'
 Cookie <- 'все куки'
 
