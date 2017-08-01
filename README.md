@@ -233,6 +233,7 @@ hostId <- hosts$hostId[2];
 dateFrom <- '2017-05-28';
 dateTo <- '2017-07-28';
 
+# Максимум отдает 3000 запросов.
 queries <- ywGetQueriesWeb(headers = header, 
                           hostId = hostId,
                           dateFrom = dateFrom,
