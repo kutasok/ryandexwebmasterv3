@@ -229,6 +229,12 @@ hosts <- ywGetAddedHostsWeb(headers = headers)
 ```
 hostId <- hosts$hostId[2];
 
+# Если даты выгрузки не указаны, будет выгрузка за последний месяц.
+dateFrom <- '2017-05-28';
+dateTo <- '2017-07-28';
+
 queries <- ywGetQueriesWeb(headers = header, 
-                          hostId = hostId)
+                          hostId = hostId,
+                          dateFrom = dateFrom,
+                          dateTo = dateTo)
 ```
