@@ -213,9 +213,11 @@ backlinksHistory <- ywGetBacklinksHistory(host_id=sites_list$host_id[1],
 ```
 
 * Получаем из веб версии все добавленные хосты.
-```
-ВНИМАНИЕ! Пользователям из Украины нужно использовать прокси чтобы работать с веб версией: [мануал] (https://netpeak.net/ru/blog/kak-ispol-zovat-proksi-v-skriptakh-r-obkhodim-blokirovku-api-yandeksa-mail-ru-i-vkontakte/) 
 
+ВНИМАНИЕ! Пользователям из Украины нужно использовать прокси чтобы работать с веб версией. 
+[Мануал по настройке прокси](https://netpeak.net/ru/blog/kak-ispol-zovat-proksi-v-skriptakh-r-obkhodim-blokirovku-api-yandeksa-mail-ru-i-vkontakte/).
+
+```
 # Берем User-Agent и Cookie из браузера http://img.netpeak.ua/kutasok/rZXle-2017-08-01.png и вставляем ниже.
 User_Agent <-  'юзер агент'
 Cookie <- 'все куки'
